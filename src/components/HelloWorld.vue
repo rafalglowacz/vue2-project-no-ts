@@ -2,10 +2,21 @@
 export default {
   data() {
     return {
+      // Note: "go to definition" works fine on `{{ msg }}`, you're taken here:
       msg: {
         type: String,
         required: true
       }
+    }
+  },
+  methods: {
+    // "Go to definition" on `@click=foo` doesn't lead to this method.
+    foo() {
+      console.log('foo')
+    },
+    // Calling foo() from another method also isn't recognized.
+    bar() {
+      this.foo()
     }
   }
 }
@@ -16,7 +27,7 @@ export default {
     <h1 class="green">{{ msg }}</h1>
     <h3>
       You’ve successfully created a project with
-      <a target="_blank" href="https://vitejs.dev/">Vite</a> +
+      <a @click="foo" target="_blank" href="https://vitejs.dev/">Vite</a> +
       <a target="_blank" href="https://v2.vuejs.org/">Vue 2</a>.
     </h3>
   </div>
