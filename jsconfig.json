@@ -6,6 +6,10 @@
     }
   },
   "vueCompilerOptions": {
-    "target": 2.7
+    "target": 2.7,
+    "optionsWrapper": [
+      "(await import('@vue/runtime-dom')).defineComponent(",
+      ")"
+    ]
   }
 }

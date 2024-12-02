@@ -12,6 +12,7 @@
   "devDependencies": {
     "@vitejs/plugin-legacy": "^2.0.0",
     "@vitejs/plugin-vue2": "^1.1.2",
+    "@vue/runtime-dom": "^3.5.13",
     "terser": "^5.14.2",
     "vite": "^3.0.2"
   }
